@@ -5,4 +5,4 @@ def fib(n):
         return 1
     return fib(n - 2) + fib(n - 1)
 
-print(fib(35))
+fib(35)

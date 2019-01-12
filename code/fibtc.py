@@ -5,4 +5,4 @@ def fib(n, a, b):
         return b
     return fib(n-1, b, a+b)
 
-print(fib(35, 0, 1))
+fib(35, 0, 1)
