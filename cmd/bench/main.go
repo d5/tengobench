@@ -11,21 +11,16 @@ import (
 func main() {
 	dir := os.Args[1]
 
-	fmt.Println("| Lang | fib(35) | fibt(35) |  Type  |")
+	fmt.Println("| | fib(35) | fibt(35) |  Type  |")
 	fmt.Println("| :--- |    ---: |     ---: |  :---: |")
 
 	// Go
-	fmt.Print("| Go |")
-	start := time.Now()
-	fib(35)
-	fmt.Printf(" `%s` |", formatNum(time.Since(start).Nanoseconds()))
-	start = time.Now()
-	fibTC(35, 0, 1)
-	fmt.Printf(" `%s` |", formatNum(time.Since(start).Nanoseconds()))
-	fmt.Println(" Go (native) |")
+	fmt.Printf("| Go | `%s` | `%s` | Go (native) |\n",
+		formatNum(execCommand("gofib")),
+		formatNum(execCommand("gofibtc")))
 
 	// Tengo
-	fmt.Printf("| **Tengo** | `%s` | `%s` | Go-VM |\n",
+	fmt.Printf("| [**Tengo**](https://github.com/d5/tengo) | `%s` | `%s` | Go-VM |\n",
 		formatNum(execCommand("tengo", dir+"/fib.tengo")),
 		formatNum(execCommand("tengo", dir+"/fibtc.tengo")))
 
@@ -35,12 +30,12 @@ func main() {
 		formatNum(execCommand("lua", dir+"/fibtc.lua")))
 
 	// go-lua
-	fmt.Printf("| go-lua | `%s` | `%s` | Go-Lua-VM |\n",
+	fmt.Printf("| [go-lua](https://github.com/Shopify/go-lua) | `%s` | `%s` | Go-Lua-VM |\n",
 		formatNum(execCommand("go-lua", dir+"/fib.lua")),
 		formatNum(execCommand("go-lua", dir+"/fibtc.lua")))
 
 	// GopherLua (glua)
-	fmt.Printf("| GopherLua | `%s` | `%s` | Go-Lua-VM |\n",
+	fmt.Printf("| [GopherLua](https://github.com/yuin/gopher-lua) | `%s` | `%s` | Go-Lua-VM |\n",
 		formatNum(execCommand("glua", dir+"/fib.lua")),
 		formatNum(execCommand("glua", dir+"/fibtc.lua")))
 
@@ -50,12 +45,12 @@ func main() {
 		formatNum(execCommand("python", dir+"/fibtc.py")))
 
 	// otto
-	fmt.Printf("| otto | `%s` | `%s` | Go-JS-Interpreter |\n",
+	fmt.Printf("| [otto](https://github.com/robertkrimen/otto) | `%s` | `%s` | Go-JS-Interpreter |\n",
 		formatNum(execCommand("otto", dir+"/fib.otto")),
 		formatNum(execCommand("otto", dir+"/fibtc.otto")))
 
 	// Anko
-	fmt.Printf("| Anko | `%s` | `%s` | Go-Interpreter |\n",
+	fmt.Printf("| [Anko](https://github.com/mattn/anko) | `%s` | `%s` | Go-Interpreter |\n",
 		formatNum(execCommand("anko", dir+"/fib.ank")),
 		formatNum(execCommand("anko", dir+"/fibtc.ank")))
 }
