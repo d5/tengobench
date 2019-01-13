@@ -15,44 +15,45 @@ func main() {
 	fmt.Println("| :--- |    ---: |     ---: |  :---: |")
 
 	// Go
-	fmt.Printf("| Go | `%s` | `%s` | Go (native) |\n",
+	fmt.Printf("| Go | `%sms` | `%sms` | Go (native) |\n",
 		formatNum(execCommand("gofib")),
 		formatNum(execCommand("gofibtc")))
 
 	// Tengo
-	fmt.Printf("| [**Tengo**](https://github.com/d5/tengo) | `%s` | `%s` | Go-VM |\n",
+	fmt.Printf("| [**Tengo**](https://github.com/d5/tengo) | `%sms` | `%sms` | VM on Go |\n",
 		formatNum(execCommand("tengo", dir+"/fib.tengo")),
 		formatNum(execCommand("tengo", dir+"/fibtc.tengo")))
 
 	// Lua
-	fmt.Printf("| Lua | `%s` | `%s` | Lua (native) |\n",
+	fmt.Printf("| Lua | `%sms` | `%sms` | Lua (native) |\n",
 		formatNum(execCommand("lua", dir+"/fib.lua")),
 		formatNum(execCommand("lua", dir+"/fibtc.lua")))
 
 	// go-lua
-	fmt.Printf("| [go-lua](https://github.com/Shopify/go-lua) | `%s` | `%s` | Go-Lua-VM |\n",
+	fmt.Printf("| [go-lua](https://github.com/Shopify/go-lua) | `%sms` | `%sms` | Lua VM on Go |\n",
 		formatNum(execCommand("go-lua", dir+"/fib.lua")),
 		formatNum(execCommand("go-lua", dir+"/fibtc.lua")))
 
 	// GopherLua (glua)
-	fmt.Printf("| [GopherLua](https://github.com/yuin/gopher-lua) | `%s` | `%s` | Go-Lua-VM |\n",
+	fmt.Printf("| [GopherLua](https://github.com/yuin/gopher-lua) | `%sms` | `%sms` | Lua VM on Go |\n",
 		formatNum(execCommand("glua", dir+"/fib.lua")),
 		formatNum(execCommand("glua", dir+"/fibtc.lua")))
 
 	// Python
-	fmt.Printf("| Python | `%s` | `%s` | Python (native) |\n",
+	fmt.Printf("| Python | `%sms` | `%sms` | Python (native) |\n",
 		formatNum(execCommand("python", dir+"/fib.py")),
 		formatNum(execCommand("python", dir+"/fibtc.py")))
 
 	// otto
-	fmt.Printf("| [otto](https://github.com/robertkrimen/otto) | `%s` | `%s` | Go-JS-Interpreter |\n",
+	fmt.Printf("| [otto](https://github.com/robertkrimen/otto) | `%sms` | `%sms` | JS Interpreter on Go |\n",
 		formatNum(execCommand("otto", dir+"/fib.otto")),
 		formatNum(execCommand("otto", dir+"/fibtc.otto")))
 
 	// Anko
-	fmt.Printf("| [Anko](https://github.com/mattn/anko) | `%s` | `%s` | Go-Interpreter |\n",
+	fmt.Printf("| [Anko](https://github.com/mattn/anko) | `%sms` | `%sms` | Interpreter on Go |\n",
 		formatNum(execCommand("anko", dir+"/fib.ank")),
 		formatNum(execCommand("anko", dir+"/fibtc.ank")))
+
 }
 
 func execCommand(name string, args ...string) int64 {
@@ -66,6 +67,9 @@ func execCommand(name string, args ...string) int64 {
 }
 
 func formatNum(n int64) string {
+	// change ns to ms (with rounding)
+	n = (n + 500000) / 1000000
+
 	if n == 0 {
 		return "0"
 	}
