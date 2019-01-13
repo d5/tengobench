@@ -65,26 +65,6 @@ func execCommand(name string, args ...string) int64 {
 	return time.Since(start).Nanoseconds()
 }
 
-func fib(n int) int {
-	if n == 0 {
-		return 0
-	} else if n == 1 {
-		return 1
-	} else {
-		return fib(n-1) + fib(n-2)
-	}
-}
-
-func fibTC(n, a, b int) int {
-	if n == 0 {
-		return a
-	} else if n == 1 {
-		return b
-	} else {
-		return fibTC(n-1, b, a+b)
-	}
-}
-
 func formatNum(n int64) string {
 	if n == 0 {
 		return "0"
