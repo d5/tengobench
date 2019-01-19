@@ -12,6 +12,7 @@ To run the benchmark, you will need the following tools installed in your PATH.
 - [starlark](https://github.com/google/starlark-go): `go install go.starlark.net/cmd/starlark`
 - gofib: `go install github.com/d5/tengobench/cmd/gofib`
 - gofibtc: `go install github.com/d5/tengobench/cmd/gofibtc`
+- [gpython](https://github.com/go-python/gpython): `go install github.com/go-python/gpython`
 
 To start the benchmark:
 
