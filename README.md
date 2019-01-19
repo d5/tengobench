@@ -9,6 +9,7 @@ To run the benchmark, you will need the following tools installed in your PATH.
 - [otto](https://github.com/robertkrimen/otto): `go get -v github.com/robertkrimen/otto/otto`
 - [go-lua](https://github.com/Shopify/go-lua): `go install github.com/d5/tengobench/cmd/go-lua`
 - [Anko](https://github.com/mattn/anko): `go install github.com/mattn/anko`
+- [starlark](https://github.com/google/starlark-go): `go install go.starlark.net/cmd/starlark`
 - gofib: `go install github.com/d5/tengobench/cmd/gofib`
 - gofibtc: `go install github.com/d5/tengobench/cmd/gofibtc`
 

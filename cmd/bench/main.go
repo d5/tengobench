@@ -44,6 +44,11 @@ func main() {
 		formatNum(execCommand("python", dir+"/fib.py")),
 		formatNum(execCommand("python", dir+"/fibtc.py")))
 
+	// Starlark
+	fmt.Printf("| [starlark-go](https://github.com/google/starlark-go) | `%sms` | `%sms` | Python-like Interpreter on Go |\n",
+		formatNum(execCommand("starlark", "-recursion", dir+"/fib.star")),
+		formatNum(execCommand("starlark", "-recursion", dir+"/fibtc.star")))
+
 	// otto
 	fmt.Printf("| [otto](https://github.com/robertkrimen/otto) | `%sms` | `%sms` | JS Interpreter on Go |\n",
 		formatNum(execCommand("otto", dir+"/fib.otto")),
