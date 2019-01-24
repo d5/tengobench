@@ -54,10 +54,15 @@ func main() {
 		formatNum(execCommand("gpython", dir+"/fib.py")),
 		formatNum(execCommand("gpython", dir+"/fibtc.py")))
 
+	// goja
+	fmt.Printf("| [goja](https://github.com/dop251/goja) | `%sms` | `%sms` | JS VM on Go |\n",
+		formatNum(execCommand("goja", dir+"/fib.js")),
+		formatNum(execCommand("goja", dir+"/fibtc.js")))
+
 	// otto
 	fmt.Printf("| [otto](https://github.com/robertkrimen/otto) | `%sms` | `%sms` | JS Interpreter on Go |\n",
-		formatNum(execCommand("otto", dir+"/fib.otto")),
-		formatNum(execCommand("otto", dir+"/fibtc.otto")))
+		formatNum(execCommand("otto", dir+"/fib.js")),
+		formatNum(execCommand("otto", dir+"/fibtc.js")))
 
 	// Anko
 	fmt.Printf("| [Anko](https://github.com/mattn/anko) | `%sms` | `%sms` | Interpreter on Go |\n",

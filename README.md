@@ -3,7 +3,7 @@
 To run the benchmark, you will need the following tools installed in your PATH.
 
 - Python
-- Lua 
+- Lua
 - [Tengo](https://github.com/d5/tengo): `go install github.com/d5/tengo/cmd/tengo`
 - [GopherLua](https://github.com/yuin/gopher-lua): `go get github.com/yuin/gopher-lua/cmd/glua`
 - [otto](https://github.com/robertkrimen/otto): `go get -v github.com/robertkrimen/otto/otto`
@@ -13,6 +13,7 @@ To run the benchmark, you will need the following tools installed in your PATH.
 - gofib: `go install github.com/d5/tengobench/cmd/gofib`
 - gofibtc: `go install github.com/d5/tengobench/cmd/gofibtc`
 - [gpython](https://github.com/go-python/gpython): `go get github.com/go-python/gpython`
+- [goja](https://github.com/dop251/goja): `go get github.com/dop251/goja/goja`
 
 To start the benchmark:
 
