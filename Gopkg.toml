@@ -3,7 +3,7 @@
   unused-packages = true
 
 [[constraint]]
-  revision = "48449c60c0a91cdc83cf554aa0931380393b9b02"
+  branch = "master"
   name = "github.com/Shopify/go-lua"
 
 
