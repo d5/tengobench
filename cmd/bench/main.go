@@ -24,6 +24,11 @@ func main() {
 		formatNum(execCommand("tengo", dir+"/fib.tengo")),
 		formatNum(execCommand("tengo", dir+"/fibtc.tengo")))
 
+	// Yaegi
+	fmt.Printf("| [**Yaegi**](https://github.com/containous/yaegi) | `%sms` | `%sms` | Yaegi VM on Go |\n",
+		formatNum(execCommand("yaegi", dir+"/fib.yaegi")),
+		formatNum(execCommand("yaegi", dir+"/fibtc.yaegi")))
+
 	// Lua
 	fmt.Printf("| Lua | `%sms` | `%sms` | Lua (native) |\n",
 		formatNum(execCommand("lua", dir+"/fib.lua")),
