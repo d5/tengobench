@@ -13,6 +13,7 @@ require (
 	github.com/go-sourcemap/sourcemap v2.1.3+incompatible // indirect
 	github.com/mattn/anko v0.1.7 // indirect
 	github.com/robertkrimen/otto v0.0.0-20191219234010-c382bd3c16ff // indirect
+	github.com/traefik/yaegi v0.9.18 // indirect
 	github.com/yuin/gopher-lua v0.0.0-20191220021717-ab39c6098bdb // indirect
 	go.starlark.net v0.0.0-20200330013621-be5394c419b6 // indirect
 	golang.org/x/text v0.3.2 // indirect

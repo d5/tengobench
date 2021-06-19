@@ -9,7 +9,7 @@ setup:
 	go install go.starlark.net/cmd/starlark
 	go install github.com/go-python/gpython
 	go install github.com/dop251/goja/goja
-	go install github.com/containous/yaegi/cmd/yaegi
+	go get -u github.com/traefik/yaegi/cmd/yaegi
 
 start:
 	@go run ./cmd/bench ./code
